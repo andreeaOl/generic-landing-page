@@ -15,11 +15,11 @@
         <link rel="stylesheet" type="text/css" href="styles/main_style.css">
     </head>
     <body>
-                <div class="container">
-            <h2 style="text-align:center;">This is a content of Genetic Landing Page</h2>
-            <footer>
-    
-</footer>
+        {% include 'layouts/topbar.twig'%}
+        <div class="container">
+            {{ content }}
+            {% include 'layouts/footer.twig'%}
         </div>
     </body>
 </html>
+

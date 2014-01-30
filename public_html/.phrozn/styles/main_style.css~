@@ -1,0 +1,22 @@
+html,
+body {
+  background-color: #A0A0A0;
+}
+body {
+  padding-top: 20px;
+}
+.page-header {
+  background-color: #580000;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+}
+.content .span10,
+.content .span4 {
+  min-height: 500px;
+}
+.content .span4 {
+  margin-left: 5px;
+  padding-left: 14px;
+  border-left: 1px solid #eee;
+}
+
