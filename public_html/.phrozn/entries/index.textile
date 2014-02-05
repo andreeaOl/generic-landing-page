@@ -1,4 +1,40 @@
-layout: main.twig
+layout: promo.twig
 ---
-h2=. This is a content of Genetic Landing Page
+h2=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
+
+h3=. This is a the home page
 

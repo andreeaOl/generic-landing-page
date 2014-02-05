@@ -1,21 +1,30 @@
-html,
+html{
+  height: 100%;
+}
 body {
   background-color: #A0A0A0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-body {
-  padding-top: 20px;
+.footer {
+  background-color: #2F4F4F;
+  bottom:0;
+  left:0;
+  right:0;
+  height: 10%;
+  position: fixed;
 }
-.page-header {
-  background-color: #580000;
-  padding: 20px 20px 10px;
-  margin: -20px -20px 20px;
+.header {
+  height: 10%;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  background-color: #008080;
 }
-.content .span10,
-.content .span4 {
-  min-height: 500px;
-}
-.content .span4 {
-  margin-left: 5px;
-  padding-left: 14px;
-  border-left: 1px solid #eee;
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 6%; 0;
 }
