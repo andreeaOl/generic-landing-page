@@ -1,0 +1,44 @@
+<div class="block-yellow">
+ <form action="" method="POST">
+   <div class="email-form">
+     <label>
+       <span>Email address</span>
+       <input type="email" required/>
+     </label>
+   </div>
+   <div class="card">
+     <h2>Payment details</h2>
+     <div>
+       <Label>Card number</Label> 
+          <input type="number" maxlength="4" size="4" /required>
+          <input type="number" maxlength="4" size="4" /required>
+          <input type="number" maxlength="4" size="4" /required>
+          <input type="number" maxlength="4" size="4" /required>
+     </div>
+     <div>
+       <Label>Expiration Month/Year</label>
+          <select>
+           <option value="0"></option>
+           <option value="1">2</option>
+          </select>
+          <select>
+           <option value="0"></option>
+           <option value="2015">2015</option>
+          </select>
+      </div>
+      <div>
+       <Label>
+          <span>CVV</span>
+          <input type="number" maxlength="4" size="4" /required>
+       </Label> 
+      </div>
+      <div>
+       <Label>
+          <span>Full name as stated on the card</span>
+          <input type="text" /required>
+       </Label> 
+      </div>
+      <button type="submit">Submit Payment</button>
+   </div>
+ </form>
+</div>

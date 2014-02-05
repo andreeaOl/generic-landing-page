@@ -1,0 +1,10 @@
+layout: promo.twig
+---
+h2. List of products
+
+*Category 1
+*Category 2
+*Category 3
+**Product 1
+**Product 2
+**Product 3
