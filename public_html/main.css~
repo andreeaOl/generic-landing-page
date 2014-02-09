@@ -2,13 +2,13 @@ html{
  height: 100%;
 }
 body {
-  background-color: #FAF0E6;
+  background-color: #A0A0A0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 .footer {
-  background-color: #F5DEB3;
+  background-color: #2F4F4F;
   bottom:0;
   left:0;
   right:0;
@@ -37,7 +37,7 @@ ul.register {
   top:0;
   left:0;
   right:0;
-  background-color: #F5DEB3;
+  background-color: #008080;
 }
 .container {
   width: 80%;
