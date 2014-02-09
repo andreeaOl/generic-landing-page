@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Generic landing page</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <div class="header">
+       <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.asp">About us</a></li>
+        <li><a href="contact.asp">Products</a></li>
+        <li><a href="about.asp">Contact</a></li>
+       </ul>
+       <ul class="register">
+         <li><a href="test.php">PHP page</a></li>
+       </ul>    
+    </div>
+    </head>
+    <body>
+        <div class="container">
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+           <p> content<br>content<br>content<br>content</p>
+        </div>
+        <div class="footer">
+            Footer Content
+        </div>
+    </body>
+    
+</html>
