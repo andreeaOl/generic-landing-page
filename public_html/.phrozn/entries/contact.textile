@@ -1,6 +1,0 @@
-layout: promo.twig
----
-h2. Contact
-
-Phone no.
-Address: "No. Street":https://maps.google.com/
