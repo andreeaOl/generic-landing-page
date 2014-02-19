@@ -9,16 +9,20 @@
        // If you don't already use Composer,
        // then you probably should read the installation guide http://getcomposer.org/download/.
        //
+
        require 'vendor/autoload.php';
+
        //Change the following constants
        define('PAYMILL_API_KEY', 'e095cc1a5db0b9fbe07b00c9d44a3d88');
        define('CUSTOMER_EMAIL', 'offerte_a@yahoo.com');
 
          if (isset($_POST['paymillToken'])) {
+
             $service = new Paymill\Request(PAYMILL_API_KEY);
             $client = new Paymill\Models\Request\Client();
             $payment = new Paymill\Models\Request\Payment();
             $transaction = new Paymill\Models\Request\Transaction();
+
 
            try{
                 $client->setEmail(CUSTOMER_EMAIL);
@@ -30,7 +34,7 @@
                 $paymentResponse = $service->create($payment);
 
                 $transaction->setPayment($paymentResponse->getId());
-                $transaction->setAmount($_POST['amount'] * 100);
+                $transaction->setAmount($_POST['amount']);
                 $transaction->setCurrency($_POST['currency']);
                 $transaction->setDescription('Test Transaction');
                 $transactionResponse = $service->create($transaction);

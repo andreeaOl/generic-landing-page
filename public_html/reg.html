@@ -31,7 +31,7 @@ $(document).ready(function () {
      // Token
      var token = result.token;
      // Insert token into form in order to submit to server
-     form.append("<input type='hidden' name='paymillToken' value='" + token + "'/"+">");
+     form.append("<input type='hidden' name='paymillToken' value='" + token + "'/"+">")
      form.get(0).submit();
    }
    $(".submit-button").removeAttr("disabled");
@@ -91,6 +91,7 @@ $(document).ready(function () {
 
 <div class="payment-errors"></div>
 <form id="payment-form" action="request.php" method="POST">
+
 <input class="card-amount-int" name="amount" type="hidden" value="50" />
 <input class="card-currency" name="currency" type="hidden" value="EUR" />
 
