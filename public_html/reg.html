@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Generic landing page</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link rel="stylesheet" type="text/css" href="regstyle.css">
+<script type="text/javascript">
+ var PAYMILL_PUBLIC_KEY = '2962509133469dcc16e2cb2df8afd157';
+</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://bridge.paymill.com/"></script>
+<script src="livevalidation_standalone.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+
+ function PaymillResponseHandler(error, result) {
+   if (error) {
+     // Displays the error above the form
+     $(".payment-errors").text(error.apierror);
+   } else {
+     $(".payment-errors").text("");
+     var form = $("#payment-form");
+     // Token
+     var token = result.token;
+     // Insert token into form in order to submit to server
+     form.append("<input type='hidden' name='paymillToken' value='" + token + "'/"+">");
+     form.get(0).submit();
+   }
+   $(".submit-button").removeAttr("disabled");
+ }
+
+ $("#payment-form").submit(function (event) {
+   // Deactivate submit button to avoid further clicks
+   $('.submit-button').attr("disabled", "disabled");
+
+   if (!paymill.validateCardNumber($('.card-number').val())) {
+     $(".payment-errors").text("Invalid card number");
+     $(".submit-button").removeAttr("disabled");
+     return false;
+   }
+
+   if (!paymill.validateExpiry(
+     $('.card-expiry-month').val(),
+     $('.card-expiry-year').val())
+   ) {
+      $(".payment-errors").text("Invalid expiration date");
+      $(".submit-button").removeAttr("disabled");
+      return false;
+     }
+   var params = {
+                                amount_int:     $('.card-amount-int').val() * 100,  // E.g. "15" for 0.15 Eur
+                                currency:       $('.card-currency').val(),    // ISO 4217 e.g. "EUR"
+                                number:         $('.card-number').val(),
+                                exp_month:      $('.card-expiry-month').val(),
+                                exp_year:       $('.card-expiry-year').val(),
+                                cvc:            $('.card-cvc').val(),
+                                cardholder:     $('.card-holdername').val()
+      }
+
+    paymill.createToken(params, PaymillResponseHandler);
+
+    return false;
+ });
+});
+</script>
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <div class="header">
+       <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.asp">About us</a></li>
+        <li><a href="contact.asp">Products</a></li>
+        <li><a href="about.asp">Contact</a></li>
+       </ul>
+       <ul class="register">
+         <li><a href="reg.html">Sign up</a></li>
+       </ul>    
+    </div>
+    </head>
+    <body>
+        <div class="container">
+
+<div class="payment-errors"></div>
+<form id="payment-form" action="request.php" method="POST">
+<input class="card-amount-int" name="amount" type="hidden" value="50" />
+<input class="card-currency" name="currency" type="hidden" value="EUR" />
+
+<div class="form-row"><label>Card number</label>
+<input class="card-number" type="text" value="4111111111111111" size="20" /></div>
+
+<div class="form-row"><label>CVC</label>
+<input class="card-cvc" type="text" value="111" size="4" /></div>
+
+<div class="form-row"><label>Name</label>
+<input class="card-holdername" type="text" value="Joe Doe" size="20" /></div>
+
+<div class="form-row"><label>Expiry Date (MM/YYYY)</label>
+<input class="card-expiry-month" type="text" value="02" size="2" />
+<span> </span>
+<input class="card-expiry-year" type="text" value="2015" size="4" /></div>
+
+<button class="submit-button" type="submit">Submit</button>
+
+</form>
+</div>
+        </div>
+        <div class="footer">
+            Footer Content
+        </div>
+    </body>
+    
+</html>

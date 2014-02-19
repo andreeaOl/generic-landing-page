@@ -1,0 +1,13 @@
+{
+    "name": "glp/glp",
+    "description": "Generic landing page",
+    "require": {
+        "paymill/paymill": "v3.0.0"
+    },
+    "authors": [
+        {
+            "name": "Andreea Olaru",
+            "email": "andreea.olaru19@gmail.com"
+        }
+    ]
+}
