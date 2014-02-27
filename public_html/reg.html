@@ -10,6 +10,9 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 <link rel="stylesheet" type="text/css" href="regstyle.css">
+<link rel="stylesheet" type="text/css" href="validation.css">
+<script src="livevalidation_standalone.js">
+</script> 
 <script type="text/javascript">
  var PAYMILL_PUBLIC_KEY = '2962509133469dcc16e2cb2df8afd157';
 </script>
@@ -95,20 +98,61 @@ $(document).ready(function () {
 <input class="card-amount-int" name="amount" type="hidden" value="50" />
 <input class="card-currency" name="currency" type="hidden" value="EUR" />
 
+<p>
+<div class="email"><label>Email</label>
+<input class="email" type="text" id="f1"  size="20" /></div>
+    	<script type="text/javascript">
+          var f1 = new LiveValidation('f1');
+          f1.add( Validate.Email);
+          f1.add( Validate.Presence );
+        </script> 
+</p>
+
+<p>
 <div class="form-row"><label>Card number</label>
-<input class="card-number" type="text" value="4111111111111111" size="20" /></div>
+<input class="card-number" type="text" id="f2"  size="20" /></div>
+    	<script type="text/javascript">
+          var f2 = new LiveValidation('f2');
+          f2.add( Validate.Format, { pattern: /^4/, failureMessage: "4***************" });
+          f2.add( Validate.Length, { is: 16, failureMessage: "4***************"})
+        </script> 
+</p>
 
+<p>
 <div class="form-row"><label>CVC</label>
-<input class="card-cvc" type="text" value="111" size="4" /></div>
+<input class="card-cvc" type="text" id="f3" value="111" size="4" /></div>
+        <script type="text/javascript">
+          var f3 = new LiveValidation('f3');
+          f3.add( Validate.Length, { is: 3});
+          f3.add( Validate.Numericality, { onlyInteger: true } );
+        </script> 
 
+</p>
+
+<p>
 <div class="form-row"><label>Name</label>
-<input class="card-holdername" type="text" value="Joe Doe" size="20" /></div>
+<input class="card-holdername" type="text" id="f4" value="Joe Doe" size="20" /></div>
+        <script type="text/javascript">
+          var f4 = new LiveValidation('f4');
+          f4.add( Validate.Presence );
+          f4.add( Validate.Format, { pattern: /[a-zA-Z]/i } );
+        </script> 
 
+</p>
+
+<p>
 <div class="form-row"><label>Expiry Date (MM/YYYY)</label>
-<input class="card-expiry-month" type="text" value="02" size="2" />
+<input class="card-expiry-month" type="text" id="f5"value="02" size="2" />
 <span> </span>
-<input class="card-expiry-year" type="text" value="2015" size="4" /></div>
+<input class="card-expiry-year" type="text" id="f6" value="2015" size="4" /></div>
+        <script type="text/javascript">
+          var f5 = new LiveValidation('f5');
+          f5.add( Validate.Numericality, { minimum: 1, maximum: 12 } );
+          var f6 = new LiveValidation('f6');
+          f6.add( Validate.Numericality, { minimum: 2014 } );
+        </script> 
 
+</p>
 <button class="submit-button" type="submit">Submit</button>
 
 </form>
