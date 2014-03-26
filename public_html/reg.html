@@ -100,7 +100,7 @@ $(document).ready(function () {
 
 <p>
 <div class="email"><label>Email</label>
-<input class="email" type="text" id="f1"  size="20" /></div>
+<input class="email" type="text" name="email-field" id="f1"  size="20" /></div>
     	<script type="text/javascript">
           var f1 = new LiveValidation('f1');
           f1.add( Validate.Email);
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
 <p>
 <div class="form-row"><label>Card number</label>
-<input class="card-number" type="text" id="f2"  size="20" /></div>
+<input class="card-number" name="cardno" type="text" id="f2"  size="20" /></div>
     	<script type="text/javascript">
           var f2 = new LiveValidation('f2');
           f2.add( Validate.Format, { pattern: /^4/, failureMessage: "4***************" });
@@ -153,7 +153,7 @@ $(document).ready(function () {
         </script> 
 
 </p>
-<button class="submit-button" type="submit">Submit</button>
+<button class="submit-button" name="submit-bttn" type="submit">Submit</button>
 
 </form>
 </div>
